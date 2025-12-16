@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+spec:
+  sources:
+  - repoURL: 'oci://registry-1.docker.io/bitnamicharts'
+    chart: redis
+    targetRevision: 24.0.8
+    helm:
+      valueFiles:
+      - $values/charts/prometheus/values.yaml
+  - repoURL: 'https://github.com//value-files.git'
+    targetRevision: dev
+    ref: values

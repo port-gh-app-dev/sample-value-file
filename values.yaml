@@ -1,0 +1,8 @@
+replica:
+  externalMaster:
+    enabled: true
+    host: external-redis-0.internal
+sentinel:
+  externalMaster:
+    enabled: true
+    host: external-redis-0.internal
